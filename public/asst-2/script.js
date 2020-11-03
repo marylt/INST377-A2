@@ -29,7 +29,7 @@ function displayMatches() {
   //create li containing spans (stylized text) for name, category, and address
   const html = matchArray.map(place => {
     const regex = new RegExp(this.value, 'gi');
-    const restaurantName = place.name.replace(regex, `<span class="hl">${this.value}</span>`);
+    const restaurantName = place.name.replace(regex, `<span class="hl">${this.value.toUpperCase()}</span>`);
     const restaurantCategory = place.category.replace(regex, `<span class="hl">${this.value}</span>`);
     const restaurantAddress = place.address_line_1;
     const restaurantCity = place.city;
