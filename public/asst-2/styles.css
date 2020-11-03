@@ -34,10 +34,9 @@ html, body {
 .container {
     max-width: 960px;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
     padding: 10px;
     margin: -30px;
 }
@@ -92,8 +91,7 @@ Set a bottom margin on your image and caption to ensure good spacing. */
 /* Make sure that as your page changes size, 
     your elements wrap below one another properly. */
     .container {
-        flex-direction: row;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         align-items: center;
         justify-content: center;
     }
