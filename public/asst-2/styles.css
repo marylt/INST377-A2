@@ -99,6 +99,7 @@ p {
         text-align: center;
         justify-content: center;
         display: flex;
+        flex-direction: column;
         align-content: center;
     }
   }
