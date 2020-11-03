@@ -16,8 +16,8 @@ fetch(endpoint)
 function findMatches(wordToMatch, restaurants) {
   return restaurants.filter(place => {
     //regex to match names/category cAsE INSensiTIveLy
-    const regex = new RegExp(wordToMatch.toUpperCase(), 'gi');
-    return place.name.match(regex.toUpperCase()) || place.category.match(regex.toUpperCase())
+    const regex = new RegExp(wordToMatch, 'gi');
+    return place.name.match(regex) || place.category.match(regex)
   });
 }
 
