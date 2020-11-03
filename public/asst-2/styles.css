@@ -6,15 +6,15 @@ When your page is compressed, your elements should center themselves horizontall
 html, body {
     margin: 0;
     padding: 0;
-    background-color: #CCE6BA;
+    background-color: #5AE7D6;
     align-items: center;
     text-align: center;
     justify-content: center;
 }
 
 .header {
-    background-color: #CCE6BA;
-    color: #997F6D;
+    background-color: #5AE7D6;
+    color: #9B3BF7;
     margin-bottom: 15px;
     display: flex;
     align-items: center;
@@ -72,8 +72,9 @@ p {
 }
 
 li {
-    font-family: 'Cabin', sans-serif;
+    font-family: 'Sniglet', cursive;
     font-weight: 400;
+    align-items: center;
 }
 /* Set your body background to a pale color 
 and highlight the background of your text and image. */
