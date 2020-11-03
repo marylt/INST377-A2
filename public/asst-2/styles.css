@@ -1,50 +1,16 @@
-/* copied and pasted from assignment 1 */
-
-/* with no edge spacing
-Your header should have fifteen pixels of space between it and your content div.
-When your page is compressed, your elements should center themselves horizontally. */
-html, body {
-    margin: 0;
-    padding: 0;
-    background-color: #5AE7D6;
+html {
+    box-sizing: border-box;
+    background: #FFE4B5;
+    font-family: 'helvetica neue';
+    font-size: 20px;
+    font-weight: 200;
     align-items: center;
     text-align: center;
     justify-content: center;
-}
-
+  }
+  
 .header {
-    background-color: #5AE7D6;
-    color: #9B3BF7;
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    padding: 15px;
-    flex-wrap: wrap;
-}
-
-.wrapper {
-    display: flex;
-    justify-content: center;
-}
-
-/* Set your content div to take up no more than 960px of page width. */
-/* Using flexbox, display your main content divs next to one another. */
-.container {
-    max-width: 960px;
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: column;
-    justify-content: center;
-    padding: 10px;
-    margin: -30px;
-}
-
-/* Ensure your list element headers and page header have a different font than your body fonts.
-Import no more than three weights of a display font from Google Fonts for this. */
-.header h1 {
-    padding: 20px 0px 0px 20px;
+    color: #6E6551;
 }
 
 h1 {
@@ -54,16 +20,6 @@ h1 {
     margin: 10px;
 }
 
-h2 {
-    font-family: 'Sniglet', cursive;
-    font-weight: 800;
-}
-
-h3 {
-    font-family: 'Sniglet', cursive;
-    font-weight: 700;
-}
-
 p {
     font-family: 'Sniglet', cursive;
     font-weight: 800;
@@ -71,46 +27,78 @@ p {
     margin: 5px;
 }
 
-li {
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  input {
+    width: 100%;
+    padding: 20px;
     font-family: 'Sniglet', cursive;
-    font-weight: 400;
-    align-items: center;
-}
-/* Set your body background to a pale color 
-and highlight the background of your text and image. */
+    color: #6E6551;
+  }
+  
+  .search-form {
+    max-width: 400px;
+    margin: 50px auto;
+  }
+  
+  input.search {
+    margin: 0;
+    text-align: center;
+    outline: 0;
+    background: #FFFAF0;
+    border: 2px solid #F7F7F7;
+    width: 120%;
+    left: -10%;
+    position: relative;
+    top: 10px;
+    z-index: 2;
+    border-radius: 5px;
+    font-size: 30px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.19);
+  }
+  
+  .suggestions {
+    font-family: 'Sniglet', cursive;
+    color: #6E6551;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    /*perspective: 20px;*/
+  }
+  
+  .suggestions li {
+    background: #FFFAF0;
+    list-style: none;
+    border-bottom: 1px solid #D8D8D8;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.14);
+    margin: 0;
+    padding: 20px;
+    transition: background 0.2s;
+    display: flex;
+    justify-content: center;
+    text-transform: capitalize;
+  }
+  
+  .suggestions li:nth-child(even) {
+    background: linear-gradient(to bottom,  #FFFAF0 0%,#EFEFEF 100%);
+  }
+  
+  .suggestions li:nth-child(odd) {
+    background: linear-gradient(to top,  #FFFAF0 0%,#EFEFEF 100%);
+  }
+  
+  .hl {
+    background: #FFE4B5;
+  }
 
-
-/* Add a maximum screen size break at 1000 pixels. */
-
-/* If your display size is less than 1000 pixels...
-set your container to center content in the page
-Set your image-and-caption box to form a row
-Evenly space your image and caption within that row
-Set a bottom margin on your image and caption to ensure good spacing. */
-
-@media only screen and (max-width: 1000px) {
-/* Make sure that as your page changes size, 
-    your elements wrap below one another properly. */
-    .container {
-        flex-wrap: nowrap;
+  @media only screen and (max-width: 1000px) {
+    html{
         align-items: center;
+        text-align: center;
         justify-content: center;
-    }
-    .image {
-        flex: 1 0 auto;
-        align-content: center;
-        margin-right: 0px;
         display: flex;
-        justify-content: center;
+        align-content: center;
     }
-    .description {
-        flex: 1 2 auto;
-    }
-    .image p {
-        margin: auto 0 auto 0;
-    }
-    
-    .description {
-        flex-grow: 3;
-    }
-}
+  }
