@@ -22,6 +22,9 @@ function findMatches(wordToMatch, restaurants) {
 }
 
 function displayMatches() {
+  if (this.value == ''){
+    suggestions.innerHTML = '';
+  } else{
   const matchArray = findMatches(this.value, restaurants);
   //create li containing spans (stylized text) for name, category, and address
   const html = matchArray.map(place => {
@@ -44,15 +47,10 @@ function displayMatches() {
   }).join('');
   suggestions.innerHTML = html;
 }
+}
 
 const searchInput = document.querySelector('.search');
 const suggestions = document.querySelector('.suggestions');
 
 searchInput.addEventListener('change', displayMatches);
 searchInput.addEventListener('keyup', displayMatches);
-
-if (!document.getElementById("search").value)
-{
-    console.log("Box empty")
-    
-}
