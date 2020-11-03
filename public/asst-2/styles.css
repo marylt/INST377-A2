@@ -1,3 +1,4 @@
+
 /* This is just CSS copy from assignment 1 */
 
 /* with no edge spacing
@@ -7,17 +8,20 @@ html, body {
     margin: 0;
     padding: 0;
     background-color: #CCE6BA;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
 }
 
 .header {
-    background-color: #997F6D;
-    color: #F0EAC2;
+    background-color: #CCE6BA;
+    color: #997F6D;
     margin-bottom: 15px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    text-align: center;
+    justify-content: center;
     padding: 15px;
-    flex-direction: row;
     flex-wrap: wrap;
 }
 
@@ -31,47 +35,11 @@ html, body {
 .container {
     max-width: 960px;
     display: flex;
-    flex-grow: 3;
     flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: flex-start;
     padding: 10px;
-}
-
-
-/* Allow your image to take up no more space than the maximum width of your left column.
-Do not change the size of your UMD logo/Testudo picture while doing this. */
-.image {
-    flex: 0 1 auto;
-    padding: 10px;
-    margin-right: 15px;
-}
-/* Using shorthand, add a solid, one-pixel border to your image. */
-/* Set your image to have rounded corners of 4px. */
-.image img {
-    border: 1px solid white;
-    border-radius: 4px;
-    max-width: 100%;
-}
-
-.image p {
-    background-color: #F0EAC2;
-    padding: 10px;
-    width: 180px;
-}
-
-.description {
-    flex: 2;
-    background-color: #F0EAC2;
-    margin: 10px;
-    padding: 10px;
-}
-
-.description {
-    background-color: #F0EAC2;
-    padding: 10px;
-    border: 1px dashed white;
 }
 
 /* Ensure your list element headers and page header have a different font than your body fonts.
@@ -123,7 +91,7 @@ Set a bottom margin on your image and caption to ensure good spacing. */
     .container {
         flex-direction: row;
         flex-wrap: wrap;
-        align-items: flex-start;
+        align-items: center;
         justify-content: center;
     }
     .image {
@@ -131,7 +99,7 @@ Set a bottom margin on your image and caption to ensure good spacing. */
         align-content: center;
         margin-right: 0px;
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
     }
     .description {
         flex: 1 2 auto;
