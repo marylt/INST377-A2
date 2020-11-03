@@ -1,34 +1,39 @@
-/* copied and pasted from the Wes Bos Tutorial at https://github.com/wesbos/JavaScript30/tree/master/06%20-%20Type%20Ahead */
+//json we want
+const endpoint = 'https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json';
 
-const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
+//empty array for storing incoming json
+const restaurants = [];
 
-const cities = [];
+//fetch data from endpoint and ensure error is caught
 fetch(endpoint)
   .then(blob => blob.json())
-  .then(data => cities.push(...data));
-
-function findMatches(wordToMatch, cities) {
-  return cities.filter(place => {
-    // here we need to figure out if the city or state matches what was searched
+  .then(data => restaurants.push(...data))
+  .catch((err) => {
+    console.log(err);
+  });
+  
+//match based on restaurant name and category
+function findMatches(wordToMatch, restaurants) {
+  return restaurants.filter(place => {
+    //regex to match names/category cAsE INSensiTIveLy
     const regex = new RegExp(wordToMatch, 'gi');
-    return place.city.match(regex) || place.state.match(regex)
+    return place.name.match(regex) || place.category.match(regex)
   });
 }
 
-function numberWithCommas(x) {
-  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-}
-
 function displayMatches() {
-  const matchArray = findMatches(this.value, cities);
+  const matchArray = findMatches(this.value, restaurants);
+  //create li containing spans (stylized text) for name, category, and address
   const html = matchArray.map(place => {
     const regex = new RegExp(this.value, 'gi');
-    const cityName = place.city.replace(regex, `<span class="hl">${this.value}</span>`);
-    const stateName = place.state.replace(regex, `<span class="hl">${this.value}</span>`);
+    const restaurantName = place.name.replace(regex, `<span class="hl">${this.value}</span>`);
+    const restaurantCategory = place.category.replace(regex, `<span class="hl">${this.value}</span>`);
+    const restaurantAddress = place.address_line_1;
     return `
       <li>
-        <span class="name">${cityName}, ${stateName}</span>
-        <span class="population">${numberWithCommas(place.population)}</span>
+        <span class="name">${restaurantName}</span>
+        <span class='category'>${restaurantCategory}</span>
+        <span class="address">${restaurantAddress}</span>
       </li>
     `;
   }).join('');
@@ -40,3 +45,9 @@ const suggestions = document.querySelector('.suggestions');
 
 searchInput.addEventListener('change', displayMatches);
 searchInput.addEventListener('keyup', displayMatches);
+
+if (!document.getElementById("search").value)
+{
+    console.log("Box empty")
+    
+}
