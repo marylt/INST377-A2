@@ -16,8 +16,8 @@ fetch(endpoint)
 function findMatches(wordToMatch, restaurants) {
   return restaurants.filter(place => {
     //regex to match names/category cAsE INSensiTIveLy
-    const regex = new RegExp(wordToMatch, 'gi');
-    return place.name.match(regex) || place.category.match(regex)
+    const regex = new RegExp(wordToMatch.toUpperCase(), 'gi');
+    return place.name.match(regex.toUpperCase()) || place.category.match(regex.toUpperCase())
   });
 }
 
@@ -32,6 +32,8 @@ function displayMatches() {
     const restaurantName = place.name.replace(regex, `<span class="hl">${this.value}</span>`);
     const restaurantCategory = place.category.replace(regex, `<span class="hl">${this.value}</span>`);
     const restaurantAddress = place.address_line_1;
+    const restaurantCity = place.city;
+    const restaurantZip = place.zip;
     return `
       <li>
       <div class="listItem">
@@ -40,6 +42,10 @@ function displayMatches() {
         <span class='category'>${restaurantCategory}</span>
         <br>
         <span class="address">${restaurantAddress}</span>
+        <br>
+        <span class="city">${restaurantCity}</span>
+        <br>
+        <span class="zip">${restaurantZip}</span>
       </div>
       </li>
       <br>
