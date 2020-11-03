@@ -39,6 +39,7 @@ html, body {
     justify-content: center;
     align-items: flex-start;
     padding: 10px;
+    margin: -30px;
 }
 
 /* Ensure your list element headers and page header have a different font than your body fonts.
@@ -51,6 +52,7 @@ h1 {
     font-family: 'Sniglet', cursive;
     font-weight: 800;
     text-shadow: 2px 2px white;
+    margin: 10px;
 }
 
 h2 {
@@ -64,8 +66,10 @@ h3 {
 }
 
 p {
-    font-family: 'Cabin', sans-serif;
-    font-weight: 400;
+    font-family: 'Sniglet', cursive;
+    font-weight: 800;
+    font-size: 18px;
+    margin: 5px;
 }
 
 li {
