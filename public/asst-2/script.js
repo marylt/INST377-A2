@@ -31,10 +31,15 @@ function displayMatches() {
     const restaurantAddress = place.address_line_1;
     return `
       <li>
+      <div class="listItem">
         <span class="name">${restaurantName}</span>
+        <br>
         <span class='category'>${restaurantCategory}</span>
+        <br>
         <span class="address">${restaurantAddress}</span>
+      </div>
       </li>
+      <br>
     `;
   }).join('');
   suggestions.innerHTML = html;
