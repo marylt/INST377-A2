@@ -45,6 +45,7 @@ p {
   
   input.search {
     margin: 0;
+    margin-bottom: 40px;
     text-align: center;
     outline: 0;
     background: #FFFAF0;
